@@ -1,0 +1,64 @@
+<div class="container" style="background-image: url(https://images.designtrends.com/wp-content/uploads/2015/11/06163757/plain-Backgrounds1.jpg);">
+    <div>
+    <p><b>Immediate opening for {{job.title}} with {{job.skillsqualification}} @{{job.location}}</b></p>
+        <ul>
+            <li><b>Experience:</b>{{job.experience}}</li>
+            <li><b>Salary:</b>{{job.salary}}</li>
+            <li><b>Location</b>{{job.location}}</li>
+        </ul>
+        <button class="btn btn-primary" type="submit" style="align-self: flex-end;" [routerLink]='["/home"]'>Register To Apply</button>
+    </div>
+    <div>
+        <b>Job Description</b>
+        <ul>
+            <li>
+                {{job.title}} 
+                </li>
+                <li>
+                {{job.skillsqualification}}
+            </li>
+        </ul>
+    </div>
+    <div>
+        <b>
+            Responsibilities:
+        </b>
+        <ul>
+            <li>{{job.responsibility}}</li>
+            <li>Use markup languages like HTML to create user-friendly web pages.
+            <li> Maintain and improve website.</li>
+            <li>  Optimize applications for maximum speed.
+                <li>Design mobile-based features.</li>
+                    <li>  Collaborate with back-end developers and web designers to improve usability.</li>
+                        <li>Get feedback from, and build solutions for, users and customers.</li>
+        </ul>
+    </div>
+    <div>
+        <b>Requirements:</b>
+        <b>Overall Experience:</b>
+        <p>{{job.experience}} to 5 years</p>
+        <b>Mandatory Experience</b>
+        <ul>
+            <li>One Year Relevant Experience in UI</li>
+            <li>Good Knowledge in {{job.skillsqualification}}</li>
+        </ul>
+    </div>
+    <div>
+    <dl class="row">
+        <dt class="col-sm-3">Role</dt>
+        <dd class="col-sm-9">{{job.role}}</dd>
+        <dt class="col-sm-3 text-truncate">Industrytype</dt>
+        <dd class="col-sm-9">{{job.industrytype}}</dd>
+        <dt class="col-sm-3">Functional Experience</dt>
+        <dd class="col-sm-9">IT-software -Application programming Interface</dd>
+        <dt class="col-sm-3">Employment type</dt>
+        <dd class="col-sm-9">{{job.employmenttype}}</dd>
+        <dt class="col-sm-3">Role Category</dt>
+        <dd class="col-sm-9">Programming and Design</dd>
+    </dl>
+    </div>
+    <div>
+        <b>Education:</b>
+        <p>{{job.degree}}</p>
+    </div>
+</div>

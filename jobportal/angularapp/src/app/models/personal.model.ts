@@ -1,0 +1,29 @@
+export class Personal{
+    _id:Number;
+    name:String;
+    emailid:String;
+    password:String;
+    mobileno:Number;
+    address:String;
+    city:String;
+    country:String;
+    postalcode:Number;
+    workexperience:Number;
+    skills:String;
+    resume:String;
+    currentemployer:String;
+    destination:String;
+    jobdesc:String;
+    experience:Number;
+    previousemployer:String;
+    prevdesc:String;
+    prevexp:String;
+    college:String;
+    yearpassed:Number;
+    graduated:Number;
+    school:String;
+    noofyears:Number;
+    qualifications:String;
+    certification:String
+
+}

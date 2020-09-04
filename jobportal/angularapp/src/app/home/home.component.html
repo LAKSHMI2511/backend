@@ -1,0 +1,384 @@
+<div class="container">
+  <h2>Job Seeker  Registration</h2>
+  <div class="card-body" role="tablist" id="nav-tab" style="background-color: skyblue;">
+<ul class="nav nav-tabs nav-justified md-tabs indigo" id="myTabJust" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab-just" data-toggle="tab" href="#home-just" role="tab" aria-controls="home-just"
+      aria-selected="true">Personal</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " id="profile-tab-just" data-toggle="tab" href="#profile-just" role="tab" aria-controls="profile-just"
+      aria-selected="false">Employment</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " id="contact-tab-just" data-toggle="tab" href="#contact-just" role="tab" aria-controls="contact-just"
+      aria-selected="false">Education</a>
+  </li>
+</ul>
+<div class="tab-content card pt-5" id="myTabContentJust">
+  <div class="tab-pane fade show active" id="home-just" role="tabpanel" aria-labelledby="home-tab-just">
+    <div class="card">
+    <form  [formGroup]="addUserForm" >
+        <div class="form-group" [ngClass]="{'has-error':addUserForm.get('name').errors &&
+         (addUserForm.get('name').touched|| addUserForm.get('name').dirty)}">
+          <label for="exampleInputEmail1">Name</label>
+          <input type="text" class="form-control" formControlName="name" id="exampleInputEmail1" name="login" aria-describedby="emailHelp" placeholder="Enter name">
+         <span class="help-block" *ngIf="addUserForm.get('name').errors &&
+         (addUserForm.get('name').touched|| addUserForm.get('name').dirty)">
+          <span *ngIf="addUserForm.get('name').errors.required">
+            Name is Required
+          </span>
+         </span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error':addUserForm.get('emailid').errors &&
+        (addUserForm.get('emailid').touched|| addUserForm.get('emailid').dirty)}">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" formControlName="emailid" id="exampleInputEmail1" name="login" aria-describedby="emailHelp" placeholder="Enter email">
+           <span class="help-block" *ngIf="addUserForm.get('emailid').errors &&
+           (addUserForm.get('emailid').touched|| addUserForm.get('emailid').dirty)">
+            <span *ngIf="addUserForm.get('emailid').errors.required">
+              emailid is Required
+            </span>
+           </span>
+          </div>
+          <div class="form-group" [ngClass]="{'has-error':addUserForm.get('password').errors &&
+          (addUserForm.get('password').touched|| addUserForm.get('password').dirty)}">
+              <label for="exampleInputEmail1">Password</label>
+              <input type="password" class="form-control" formControlName="password" id="exampleInputEmail1" name="login"
+               aria-describedby="emailHelp" placeholder="Enter password">
+             <span class="help-block" *ngIf="addUserForm.get('password').errors &&
+             (addUserForm.get('password').touched|| addUserForm.get('password').dirty)">
+              <span *ngIf="addUserForm.get('password').errors.required">
+                Password is Required
+              </span>
+             </span>
+            </div>
+      
+
+            <div class="form-group" [ngClass]="{'has-error':addUserForm.get('mobileno').errors &&
+            (addUserForm.get('mobileno').touched|| addUserForm.get('mobileno').dirty)}">
+                <label for="exampleInputEmail1">MobileNo</label>
+                <input type="number" class="form-control" formControlName="mobileno" id="exampleInputEmail1" name="login"
+                 aria-describedby="emailHelp" placeholder="Enter mobileno">
+               <span class="help-block" *ngIf="addUserForm.get('mobileno').errors &&
+               (addUserForm.get('mobileno').touched|| addUserForm.get('mobileno').dirty)">
+                <span *ngIf="addUserForm.get('mobileno').errors.required">
+                  MobileNo is Required
+                </span>
+               </span>
+              </div>
+      
+             
+        
+        
+                <div class="form-group" [ngClass]="{'has-error':addUserForm.get('workexperience').errors &&
+                (addUserForm.get('workexperience').touched|| addUserForm.get('workexperience').dirty)}">
+                    <label for="exampleInputEmail1">Experience in months</label>
+                    <input type="number" class="form-control" formControlName="workexperience" id="exampleInputEmail1" name="login"
+                     aria-describedby="emailHelp" placeholder="Enter workexperience">
+                   <span class="help-block" *ngIf="addUserForm.get('workexperience').errors &&
+                   (addUserForm.get('workexperience').touched|| addUserForm.get('workexperience').dirty)">
+                    <span *ngIf="addUserForm.get('workexperience').errors.required">
+                      Experience is Required
+                    </span>
+                   </span>
+                  </div>
+       
+
+                  <div class="form-group" [ngClass]="{'has-error':addUserForm.get('skills').errors &&
+                  (addUserForm.get('skills').touched|| addUserForm.get('skills').dirty)}">
+                      <label for="exampleInputEmail1">Skills</label>
+                      <input type="text" class="form-control" formControlName="skills" id="exampleInputEmail1" name="login"
+                       aria-describedby="emailHelp" placeholder="Enter skills">
+                     <span class="help-block" *ngIf="addUserForm.get('skills').errors &&
+                     (addUserForm.get('skills').touched|| addUserForm.get('skills').dirty)">
+                      <span *ngIf="addUserForm.get('skills').errors.required">
+                        Skills is Required
+                      </span>
+                     </span>
+                    </div>
+
+                    <div class="form-group" [ngClass]="{'has-error':addUserForm.get('address').errors &&
+                    (addUserForm.get('address').touched|| addUserForm.get('address').dirty)}">
+                        <label for="exampleInputEmail1">Address</label>
+                        <textarea type="text" class="form-control" formControlName="address" id="exampleInputEmail1" name="login"
+                         aria-describedby="emailHelp" placeholder="Enter address"></textarea>
+              
+                       <span class="help-block" *ngIf="addUserForm.get('address').errors &&
+                       (addUserForm.get('address').touched|| addUserForm.get('address').dirty)">
+                        <span *ngIf="addUserForm.get('address').errors.required">
+                          Address is Required
+                        </span>
+                       </span>
+                      </div>
+
+                    <div class="form-group" [ngClass]="{'has-error':addUserForm.get('city').errors &&
+                    (addUserForm.get('city').touched|| addUserForm.get('city').dirty)}">
+                        <label for="exampleInputEmail1">city</label>
+                         <select formControlName="city" class="form-control"   placeholder="Enter city">
+            
+                          <option *ngFor="let web of citylist">{{web}}</option>
+                      </select>
+                       <span class="help-block" *ngIf="addUserForm.get('city').errors &&
+                       (addUserForm.get('city').touched|| addUserForm.get('city').dirty)">
+                        <span *ngIf="addUserForm.get('city').errors.required">
+                          City is Required
+                        </span>
+                       </span>
+                      </div>
+
+                      
+                    <div class="form-group" [ngClass]="{'has-error':addUserForm.get('country').errors &&
+                    (addUserForm.get('country').touched|| addUserForm.get('country').dirty)}">
+                        <label for="exampleInputEmail1">Country</label>
+                        <select formControlName="country" class="form-control"   placeholder="Enter country">
+                        
+                          <option *ngFor="let web of countrylist">{{web}}</option>
+                      </select>
+              
+                       <span class="help-block" *ngIf="addUserForm.get('country').errors &&
+                       (addUserForm.get('country').touched|| addUserForm.get('country').dirty)">
+                        <span *ngIf="addUserForm.get('country').errors.required">
+                          Country is Required
+                        </span>
+                       </span>
+                      </div>
+
+                      <div class="form-group" [ngClass]="{'has-error':addUserForm.get('postalcode').errors &&
+                      (addUserForm.get('postalcode').touched|| addUserForm.get('postalcode').dirty)}">
+                          <label for="exampleInputEmail1">Postalcode</label>
+                          <input type="number" class="form-control" formControlName="postalcode" id="exampleInputEmail1" name="login"
+                           aria-describedby="emailHelp" placeholder="Enter postalcode">                
+                         <span class="help-block" *ngIf="addUserForm.get('postalcode').errors &&
+                         (addUserForm.get('postalcode').touched|| addUserForm.get('postalcode').dirty)">
+                          <span *ngIf="addUserForm.get('postalcode').errors.required">
+                            Postalcode is Required
+                          </span>
+                         </span>
+                        </div>
+
+
+
+
+                    <div class="form-group" [ngClass]="{'has-error':addUserForm.get('resume').errors &&
+                    (addUserForm.get('resume').touched|| addUserForm.get('resume').dirty)}">
+                        <label for="exampleInputEmail1">Resume</label>
+                        <input type="text" class="form-control" formControlName="resume" id="exampleInputEmail1" name="login"
+                         aria-describedby="emailHelp" placeholder="Enter resume">
+                         
+<!--<input type="file" name="image" (change)="selectImage($event)" />
+<button type="submit" (click)="onSubmit()">Upload</button>-->
+  <!--<button class="btn btn-info" [disabled]="!userForm.valid">Submit</button>-->
+                       <span class="help-block" *ngIf="addUserForm.get('resume').errors &&
+                       (addUserForm.get('resume').touched|| addUserForm.get('resume').dirty)">
+                        <span *ngIf="addUserForm.get('resume').errors.required">
+                          Resume is Required
+                        </span>
+                       </span>
+                      
+    
+                      </div>  
+                    
+    </form>
+    </div>
+  </div>
+  
+
+  <div class="tab-pane fade" id="profile-just" role="tabpanel" aria-labelledby="profile-tab-just">
+    <form  [formGroup]="addUserForm">
+      
+      <div class="form-group" [ngClass]="{'has-error':addUserForm.get('currentemployer').errors &&
+      (addUserForm.get('currentemployer').touched|| addUserForm.get('currentemployer').dirty)}">
+          <label for="exampleInputEmail1">CurrentEmployer</label>
+          <input type="text" class="form-control" formControlName="currentemployer" id="exampleInputEmail1" name="login"
+           aria-describedby="emailHelp" placeholder="currentemployer">
+         <span class="help-block" *ngIf="addUserForm.get('currentemployer').errors &&
+         (addUserForm.get('currentemployer').touched|| addUserForm.get('currentemployer').dirty)">
+          <span *ngIf="addUserForm.get('currentemployer').errors.required">
+            CurrentEmployer is Required
+          </span>
+         </span>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error':addUserForm.get('destination').errors &&
+        (addUserForm.get('destination').touched|| addUserForm.get('destination').dirty)}">
+            <label for="exampleInputEmail1">Designation</label>
+            <input type="text" class="form-control" formControlName="destination" id="exampleInputEmail1" name="login"
+             aria-describedby="emailHelp" placeholder="destination">
+           <span class="help-block" *ngIf="addUserForm.get('destination').errors &&
+           (addUserForm.get('destination').touched|| addUserForm.get('destination').dirty)">
+            <span *ngIf="addUserForm.get('destination').errors.required">
+              Designation is Required
+            </span>
+           </span>
+          </div>
+
+          <div class="form-group" [ngClass]="{'has-error':addUserForm.get('jobdesc').errors &&
+          (addUserForm.get('jobdesc').touched|| addUserForm.get('jobdesc').dirty)}">
+              <label for="exampleInputEmail1">CurrentEmployer</label>
+              <textarea type="text" class="form-control" formControlName="jobdesc" id="exampleInputEmail1" name="login"
+               aria-describedby="emailHelp" placeholder="Job Description"></textarea>
+             <span class="help-block" *ngIf="addUserForm.get('jobdesc').errors &&
+             (addUserForm.get('jobdesc').touched|| addUserForm.get('jobdesc').dirty)">
+              <span *ngIf="addUserForm.get('jobdesc').errors.required">
+                Description is Required
+              </span>
+             </span>
+            </div>
+
+            <div class="form-group" [ngClass]="{'has-error':addUserForm.get('experience').errors &&
+            (addUserForm.get('experience').touched|| addUserForm.get('experience').dirty)}">
+                <label for="exampleInputEmail1">Experience in months</label>
+                <input type="text" class="form-control" formControlName="experience" id="exampleInputEmail1" name="login"
+                 aria-describedby="emailHelp" placeholder="experience">
+               <span class="help-block" *ngIf="addUserForm.get('experience').errors &&
+               (addUserForm.get('experience').touched|| addUserForm.get('experience').dirty)">
+                <span *ngIf="addUserForm.get('experience').errors.required">
+                  Experience is Required
+                </span>
+               </span>
+              </div>
+
+              <div class="form-group" [ngClass]="{'has-error':addUserForm.get('previousemployer').errors &&
+              (addUserForm.get('previousemployer').touched|| addUserForm.get('previousemployer').dirty)}">
+                  <label for="exampleInputEmail1">PreviousEmployer</label>
+                  <input type="text" class="form-control" formControlName="previousemployer" id="exampleInputEmail1" name="login"
+                   aria-describedby="emailHelp" placeholder="previousemployer">
+                 <span class="help-block" *ngIf="addUserForm.get('previousemployer').errors &&
+                 (addUserForm.get('previousemployer').touched|| addUserForm.get('previousemployer').dirty)">
+                  <span *ngIf="addUserForm.get('previousemployer').errors.required">
+                    PreviousEmployer is Required
+                  </span>
+                 </span>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':addUserForm.get('prevdesc').errors &&
+                (addUserForm.get('prevdesc').touched|| addUserForm.get('prevdesc').dirty)}">
+                    <label for="exampleInputEmail1">Description</label>
+                    <textarea type="text" class="form-control" formControlName="prevdesc" id="exampleInputEmail1" name="login"
+                     aria-describedby="emailHelp" placeholder="Description"></textarea>
+                   <span class="help-block" *ngIf="addUserForm.get('prevdesc').errors &&
+                   (addUserForm.get('prevdesc').touched|| addUserForm.get('prevdesc').dirty)">
+                    <span *ngIf="addUserForm.get('prevdesc').errors.required">
+                      Description is Required
+                    </span>
+                   </span>
+                  </div>
+                  
+                  <div class="form-group" [ngClass]="{'has-error':addUserForm.get('prevexp').errors &&
+                  (addUserForm.get('prevexp').touched|| addUserForm.get('prevexp').dirty)}">
+                      <label for="exampleInputEmail1">CurrentEmployer</label>
+                      <input type="number" class="form-control" formControlName="currentemployer" id="exampleInputEmail1" name="login"
+                       aria-describedby="emailHelp" placeholder="experience">
+                     <span class="help-block" *ngIf="addUserForm.get('prevexp').errors &&
+                     (addUserForm.get('prevexp').touched|| addUserForm.get('prevexp').dirty)">
+                      <span *ngIf="addUserForm.get('prevexp').errors.required">
+                        Experience is Required
+                      </span>
+                     </span>
+                    </div>
+      </form>
+
+  </div>
+  <div class="tab-pane fade" id="contact-just" role="tabpanel" aria-labelledby="contact-tab-just">
+    <form  [formGroup]="addUserForm" (ngSubmit)="addJob()">
+       <div class="form-group" [ngClass]="{'has-error':addUserForm.get('college').errors &&
+         (addUserForm.get('college').touched|| addUserForm.get('college').dirty)}">
+          <label for="exampleInputEmail1">College/University</label>
+          <input type="text" class="form-control" formControlName="college" id="exampleInputEmail1" name="login"
+           aria-describedby="emailHelp" placeholder="college">
+         <span class="help-block" *ngIf="addUserForm.get('college').errors &&
+         (addUserForm.get('college').touched|| addUserForm.get('college').dirty)">
+          <span *ngIf="addUserForm.get('college').errors.required">
+            College is Required
+          </span>
+         </span>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error':addUserForm.get('yearpassed').errors &&
+         (addUserForm.get('yearpassed').touched|| addUserForm.get('yearpassed').dirty)}">
+            <label for="exampleInputEmail1">yearpassed</label>
+            <input type="number" class="form-control" formControlName="yearpassed" id="exampleInputEmail1" name="login"
+             aria-describedby="emailHelp" placeholder="yearpassed">
+           <span class="help-block" *ngIf="addUserForm.get('yearpassed').errors &&
+           (addUserForm.get('yearpassed').touched|| addUserForm.get('yearpassed').dirty)">
+            <span *ngIf="addUserForm.get('yearpassed').errors.required">
+              yearpassed is Required
+            </span>
+           </span>
+          </div>
+
+          <div class="form-group" [ngClass]="{'has-error':addUserForm.get('graduated').errors &&
+         (addUserForm.get('graduated').touched|| addUserForm.get('graduated').dirty)}">
+            <label for="exampleInputEmail1">Graduated</label>
+            <input type="number" class="form-control" formControlName="graduated" id="exampleInputEmail1" name="login"
+             aria-describedby="emailHelp" placeholder="graduated">
+           <span class="help-block" *ngIf="addUserForm.get('graduated').errors &&
+           (addUserForm.get('graduated').touched|| addUserForm.get('graduated').dirty)">
+            <span *ngIf="addUserForm.get('graduated').errors.required">
+              Graduated is Required
+            </span>
+           </span>
+          </div>
+
+          <div class="form-group" [ngClass]="{'has-error':addUserForm.get('school').errors &&
+         (addUserForm.get('school').touched|| addUserForm.get('school').dirty)}">
+            <label for="exampleInputEmail1">School</label>
+            <input type="number" class="form-control" formControlName="school" id="exampleInputEmail1" name="login"
+             aria-describedby="emailHelp" placeholder="school">
+           <span class="help-block" *ngIf="addUserForm.get('school').errors &&
+           (addUserForm.get('school').touched|| addUserForm.get('school').dirty)">
+            <span *ngIf="addUserForm.get('school').errors.required">
+              School is Required
+            </span>
+           </span>
+          </div>
+      
+
+          <div class="form-group" [ngClass]="{'has-error':addUserForm.get('noofyears').errors &&
+         (addUserForm.get('noofyears').touched|| addUserForm.get('noofyears').dirty)}">
+            <label for="exampleInputEmail1">Noofyears</label>
+            <input type="number" class="form-control" formControlName="noofyears" id="exampleInputEmail1" name="login"
+             aria-describedby="emailHelp" placeholder="noofyears">
+           <span class="help-block" *ngIf="addUserForm.get('noofyears').errors &&
+           (addUserForm.get('noofyears').touched|| addUserForm.get('noofyears').dirty)">
+            <span *ngIf="addUserForm.get('noofyears').errors.required">
+              Noofyears is Required
+            </span>
+           </span>
+          </div>
+      
+
+          <div class="form-group" [ngClass]="{'has-error':addUserForm.get('qualifications').errors &&
+         (addUserForm.get('qualifications').touched|| addUserForm.get('qualifications').dirty)}">
+            <label for="exampleInputEmail1">Qualifications</label>
+            <input type="number" class="form-control" formControlName="qualifications" id="exampleInputEmail1" name="login"
+             aria-describedby="emailHelp" placeholder="qualifications">
+           <span class="help-block" *ngIf="addUserForm.get('qualifications').errors &&
+           (addUserForm.get('qualifications').touched|| addUserForm.get('qualifications').dirty)">
+            <span *ngIf="addUserForm.get('qualifications').errors.required">
+              Qualifications is Required
+            </span>
+           </span>
+          </div>
+      
+
+          <div class="form-group" [ngClass]="{'has-error':addUserForm.get('certification').errors &&
+         (addUserForm.get('certification').touched|| addUserForm.get('certification').dirty)}">
+            <label for="exampleInputEmail1">certification</label>
+            <textarea type="text" class="form-control" formControlName="certification" id="exampleInputEmail1" name="login"
+             aria-describedby="emailHelp" placeholder="certification"></textarea>
+           <span class="help-block" *ngIf="addUserForm.get('certification').errors &&
+           (addUserForm.get('certification').touched|| addUserForm.get('certification').dirty)">
+            <span *ngIf="(addUserForm.get('certification').errors.required)">
+              certification is Required
+            </span>
+           </span>
+          </div>
+      
+          <button type="submit" class="btn btn-primary">Submit</button>
+             </form>
+  </div>
+</div>
+</div>
+</div>

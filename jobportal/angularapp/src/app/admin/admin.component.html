@@ -1,0 +1,249 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Page 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Page 2</a>
+  </li>
+  <button class="btn btn-primary"  [routerLink]="['/jobedit']">UPDATE</button>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <form  [formGroup]="addJobForm">
+      <div class="form-group" [ngClass]="{'has-error':addJobForm.get('jobid').errors &&
+      (addJobForm.get('jobid').touched|| addJobForm.get('jobid').dirty)}">
+        <label>Jobid:</label>
+        <input type="number" class="form-control"  formControlName="jobid" 
+         placeholder="Jobid">
+        <span class="help-block" *ngIf="addJobForm.get('jobid').errors &&
+        (addJobForm.get('jobid').touched|| addJobForm.get('jobid').dirty)">
+         <span *ngIf="addJobForm.get('jobid').errors.required">
+           Jobid is Required
+         </span>
+        </span>
+      </div>
+
+      <div class="form-group" [ngClass]="{'has-error':addJobForm.get('title').errors &&
+      (addJobForm.get('title').touched|| addJobForm.get('title').dirty)}">
+        <label>Title:</label>
+        <input type="text" class="form-control"  formControlName="title" 
+         placeholder="title">
+        <span class="help-block" *ngIf="addJobForm.get('title').errors &&
+        (addJobForm.get('title').touched|| addJobForm.get('title').dirty)">
+         <span *ngIf="addJobForm.get('title').errors.required">
+           Title is Required
+         </span>
+        </span>
+      </div>
+      
+      <div class="form-group" [ngClass]="{'has-error':addJobForm.get('posteddate').errors &&
+      (addJobForm.get('posteddate').touched|| addJobForm.get('posteddate').dirty)}">
+        <label>Posteddate</label>
+        <input type="text" class="form-control"  formControlName="posteddate" 
+         placeholder="posteddate">
+        <span class="help-block" *ngIf="addJobForm.get('posteddate').errors &&
+        (addJobForm.get('posteddate').touched|| addJobForm.get('posteddate').dirty)">
+         <span *ngIf="addJobForm.get('posteddate').errors.required">
+           Date is Required
+         </span>
+        </span>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error':addJobForm.get('role').errors &&
+      (addJobForm.get('role').touched|| addJobForm.get('role').dirty)}">
+        <label>Role</label>
+        <input type="text" class="form-control"  formControlName="role" 
+         placeholder="role">
+        <span class="help-block" *ngIf="addJobForm.get('role').errors &&
+        (addJobForm.get('role').touched|| addJobForm.get('role').dirty)">
+         <span *ngIf="addJobForm.get('role').errors.required">
+           Role is Required
+         </span>
+        </span>
+      </div>
+
+      <div class="form-group" [ngClass]="{'has-error':addJobForm.get('responsibility').errors &&
+      (addJobForm.get('responsibility').touched|| addJobForm.get('responsibility').dirty)}">
+        <label>Responsibility</label>
+        <input type="text" class="form-control"  formControlName="responsibility" 
+         placeholder="responsibility">
+        <span class="help-block" *ngIf="addJobForm.get('responsibility').errors &&
+        (addJobForm.get('responsibility').touched|| addJobForm.get('responsibility').dirty)">
+         <span *ngIf="addJobForm.get('responsibility').errors.required">
+           Responsibility is Required
+         </span>
+        </span>
+      </div>
+
+      <div class="form-group" [ngClass]="{'has-error':addJobForm.get('companyname').errors &&
+      (addJobForm.get('companyname').touched|| addJobForm.get('companyname').dirty)}">
+        <label>companyname</label>
+        <input type="text" class="form-control"  formControlName="companyname" 
+         placeholder="companyname">
+        <span class="help-block" *ngIf="addJobForm.get('companyname').errors &&
+        (addJobForm.get('companyname').touched|| addJobForm.get('companyname').dirty)">
+         <span *ngIf="addJobForm.get('companyname').errors.required">
+            companyname is Required
+         </span>
+        </span>
+      </div>
+
+      <div class="form-group" [ngClass]="{'has-error':addJobForm.get('experience').errors &&
+      (addJobForm.get('experience').touched|| addJobForm.get('experience').dirty)}">
+        <label>Experience</label>
+        <input type="text" class="form-control"  formControlName="experience" 
+         placeholder="experience">
+        <span class="help-block" *ngIf="addJobForm.get('experience').errors &&
+        (addJobForm.get('experience').touched|| addJobForm.get('experience').dirty)">
+         <span *ngIf="addJobForm.get('experience').errors.required">
+            Experience is Required
+         </span>
+        </span>
+      </div>
+
+      <div class="form-group" [ngClass]="{'has-error':addJobForm.get('salary').errors &&
+      (addJobForm.get('salary').touched|| addJobForm.get('salary').dirty)}">
+        <label>salary</label>
+        <input type="number" class="form-control"  formControlName="salary" 
+         placeholder="salary">
+        <span class="help-block" *ngIf="addJobForm.get('salary').errors &&
+        (addJobForm.get('salary').touched|| addJobForm.get('salary').dirty)">
+         <span *ngIf="addJobForm.get('salary').errors.required">
+            salary is Required
+         </span>
+        </span>
+      </div>
+    </form>
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <form  [formGroup]="addJobForm" (ngSubmit)="addJob()">
+    <div class="form-group" [ngClass]="{'has-error':addJobForm.get('noofposition').errors &&
+    (addJobForm.get('noofposition').touched|| addJobForm.get('noofposition').dirty)}">
+      <label>Noofposition</label>
+      <input type="number" class="form-control"  formControlName="noofposition" 
+       placeholder="noofposition">
+      <span class="help-block" *ngIf="addJobForm.get('noofposition').errors &&
+      (addJobForm.get('noofposition').touched|| addJobForm.get('noofposition').dirty)">
+       <span *ngIf="addJobForm.get('noofposition').errors.required">
+          Vacancies is Required
+       </span>
+      </span>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error':addJobForm.get('location').errors &&
+    (addJobForm.get('location').touched|| addJobForm.get('location').dirty)}">
+      <label>Location</label>
+      <input type="text" class="form-control"  formControlName="location" 
+       placeholder="location">
+      <span class="help-block" *ngIf="addJobForm.get('location').errors &&
+      (addJobForm.get('location').touched|| addJobForm.get('location').dirty)">
+       <span *ngIf="addJobForm.get('location').errors.required">
+          Location is Required
+       </span>
+      </span>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error':addJobForm.get('skillsqualification').errors &&
+    (addJobForm.get('skillsqualification').touched|| addJobForm.get('skillsqualification').dirty)}">
+      <label>skillsqualification</label>
+      <input type="text" class="form-control"  formControlName="skillsqualification" 
+       placeholder="skillsqualification">
+      <span class="help-block" *ngIf="addJobForm.get('skillsqualification').errors &&
+      (addJobForm.get('skillsqualification').touched|| addJobForm.get('skillsqualification').dirty)">
+       <span *ngIf="addJobForm.get('skillsqualification').errors.required">
+          Skills is Required
+       </span>
+      </span>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error':addJobForm.get('degree').errors &&
+    (addJobForm.get('degree').touched|| addJobForm.get('degree').dirty)}">
+      <label>Degree</label>
+      <input type="text" class="form-control"  formControlName="degree" 
+       placeholder="degree">
+      <span class="help-block" *ngIf="addJobForm.get('degree').errors &&
+      (addJobForm.get('degree').touched|| addJobForm.get('degree').dirty)">
+       <span *ngIf="addJobForm.get('degree').errors.required">
+          Degree is Required
+       </span>
+      </span>
+    </div>
+
+
+    <div class="form-group" [ngClass]="{'has-error':addJobForm.get('companyinfo').errors &&
+    (addJobForm.get('companyinfo').touched|| addJobForm.get('companyinfo').dirty)}">
+      <label>Companyinfo</label>
+      <input type="text" class="form-control"  formControlName="companyinfo" 
+       placeholder="companyinfo">
+      <span class="help-block" *ngIf="addJobForm.get('companyinfo').errors &&
+      (addJobForm.get('companyinfo').touched|| addJobForm.get('companyinfo').dirty)">
+       <span *ngIf="addJobForm.get('companyinfo').errors.required">
+          Companyinfo is Required
+       </span>
+      </span>
+    </div>
+
+    
+    <div class="form-group" [ngClass]="{'has-error':addJobForm.get('employmenttype').errors &&
+    (addJobForm.get('employmenttype').touched|| addJobForm.get('employmenttype').dirty)}">
+      <label>Employmenttype</label>
+      <input type="text" class="form-control"  formControlName="employmenttype" 
+       placeholder="employmenttype">
+      <span class="help-block" *ngIf="addJobForm.get('employmenttype').errors &&
+      (addJobForm.get('employmenttype').touched|| addJobForm.get('employmenttype').dirty)">
+       <span *ngIf="addJobForm.get('employmenttype').errors.required">
+          Employmenttype is Required
+       </span>
+      </span>
+    </div>
+
+    
+    <div class="form-group" [ngClass]="{'has-error':addJobForm.get('industrytype').errors &&
+    (addJobForm.get('industrytype').touched|| addJobForm.get('industrytype').dirty)}">
+      <label>Industrytype</label>
+      <input type="text" class="form-control"  formControlName="industrytype" 
+       placeholder="industrytype">
+      <span class="help-block" *ngIf="addJobForm.get('industrytype').errors &&
+      (addJobForm.get('industrytype').touched|| addJobForm.get('industrytype').dirty)">
+       <span *ngIf="addJobForm.get('industrytype').errors.required">
+          Industrytype is Required
+       </span>
+      </span>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error':addJobForm.get('searchword').errors &&
+    (addJobForm.get('searchword').touched|| addJobForm.get('searchword').dirty)}">
+      <label>Searchword</label>
+      <input type="text" class="form-control"  formControlName="searchword" 
+       placeholder="searchword">
+      <span class="help-block" *ngIf="addJobForm.get('searchword').errors &&
+      (addJobForm.get('searchword').touched|| addJobForm.get('searchword').dirty)">
+       <span *ngIf="addJobForm.get('searchword').errors.required">
+          Searchword is Required
+       </span>
+      </span>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error':addJobForm.get('desc').errors &&
+    (addJobForm.get('desc').touched|| addJobForm.get('desc').dirty)}">
+      <label>Description</label>
+      <input type="text" class="form-control"  formControlName="desc" 
+       placeholder="desc">
+      <span class="help-block" *ngIf="addJobForm.get('desc').errors &&
+      (addJobForm.get('desc').touched|| addJobForm.get('desc').dirty)">
+       <span *ngIf="addJobForm.get('desc').errors.required">
+          Description is Required
+       </span>
+      </span>
+    </div>
+   
+    <button class="btn btn-primary" type="submit"  [disabled]="!addJobForm.valid">
+      Add
+    </button>
+    <button class="btn btn-primary"  [routerLink]="['/jobedit']">UPDATE</button>
+    
+  </form></div>
+</div>
+
+
+
+

@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <div class="nav-item">
+   <i class="fa fa-home" aria-hidden="true"><a [routerLink]="['/login']" style="color: white;">Home</a></i>
+ </div>
+  <div class="nav-item">
+    <i class="fa fa-list" aria-hidden="true"><a [routerLink]="['/currentjob']" style="color: white;"> filter by Jobs</a></i>
+</div> 
+  <div class="nav-item active" *ngIf="userIsAuthenticated">
+    <i class="fa fa-user" aria-hidden="true" (click)="profile()">Profile</i>
+    </div>
+    <div class="nav-item active" *ngIf="userIsAuthenticated">
+      <i class="fa fa-user" aria-hidden="true">{{personals.name}}</i>
+    </div>
+   
+ 
+ 
+<div class="nav-item active" *ngIf="userIsAuthenticated">
+  <i class="fa fa-sign-out" aria-hidden="true" (click)="onlogout()">Logout</i>
+    </div>
+
+      
+            <button type="button" id="dropdownMenu1" data-toggle="dropdown" *ngIf="!userIsAuthenticated" class="btn btn-outline-secondary dropdown-toggle">Login <span class="caret"></span></button>
+            <ul class="dropdown-menu dropdown-menu-right mt-2">
+               <li class="px-3 py-2">
+                <form *ngIf="!userIsAuthenticated" [formGroup]="loginForm">
+                  <div class="form-group" [ngClass]="{'has-error':loginForm.get('name').errors &&
+                (loginForm.get('name').touched|| loginForm.get('name').dirty)}">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" [(ngModel)]="emailid" class="form-control" formControlName="name" id="exampleInputEmail1" name="login" aria-describedby="emailHelp" placeholder="Enter email">
+                   <span class="help-block" *ngIf="loginForm.get('name').errors &&
+                   (loginForm.get('name').touched|| loginForm.get('name').dirty)">
+                    <span *ngIf="loginForm.get('name').errors.required">
+                      Email is Required
+                    </span>
+                   </span>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group" [ngClass]="{'has-error':loginForm.get('password').errors &&
+                  (loginForm.get('password').touched|| loginForm.get('password').dirty)}">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" [(ngModel)]="password" class="form-control"  formControlName="password" id="exampleInputPassword1" name="login" placeholder="Password">
+                    <span class="help-block" *ngIf="loginForm.get('password').errors &&
+                    (loginForm.get('password').touched|| loginForm.get('password').dirty)">
+                     <span *ngIf="loginForm.get('password').errors.required">
+                       Password is Required
+                     </span>
+                    </span>
+                  </div>
+                  <button type="submit" class="btn btn-primary" (click)="checkuser()">Submit</button>
+                  <p>New User?<a routerLink="/home">Register As Fresher/</a><a routerLink="/experience">Experience</a></p>
+                </form> 
+                </li>
+            
+      
+    </ul>
+         
+    
+    
+</nav>
+<router-outlet></router-outlet> 

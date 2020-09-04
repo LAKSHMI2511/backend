@@ -1,0 +1,31 @@
+<div class="container" >
+    <h4 class="card-header">Current Jobs</h4>
+    <div class="form-inline md-form mr-auto mb-4">
+      <input type="text" class="form-control mr-sm-2" placeholder="Search jobs" [(ngModel)]="term">Search related jobs     
+    </div>
+              <div class="col-sm-4" *ngFor="let item of job|filter:term">
+
+                <div routerLink="['/job',item._id]"></div>
+
+
+                 <div class="card" >
+                    <div class="card-body" style="text-align: left;">
+                      <div class="card-title" style="text-decoration-color: slateblue;font-style: italic;"><h5>{{item.title}}@{{item.companyname}}</h5></div>
+                     <h6 class="card-text">Salary:{{item.salary}}</h6>
+                     <h6 class="card-text">Experience:{{item.experience}}</h6>
+                     <h6 class="card-text">Vacancies:{{item.noofposition}}</h6>
+                     <h6 class="card-text">Degree:{{item.degree}}</h6>
+                     <h6 class="card-text">skills:{{item.skillsqualification}}</h6>
+                     <h6 class="card-text">Role:{{item.role}}</h6>
+                     <h6 class="card-text">Responsibility:{{item.responsibility}}</h6>
+                     <h6 class="card-text">Location:{{item.location}}</h6>
+                    </div>
+                    <div class="card-footer text-muted">
+                      PostedDate:{{item.posteddate}}&nbsp;&nbsp;&nbsp;&nbsp;Vacancies:{{item.noofposition}}
+                      <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                  </div>
+                     
+
+</div>
+</div>

@@ -1,0 +1,30 @@
+<!-- <div *ngFor="let job of jobs | search:text1:text2">
+    {{job.role}}
+    {{job.location}}
+    {{job.skillsqualification}}
+</div> -->
+
+
+<div class="container" >
+              <div class="col-sm-4" *ngFor="let job of jobs|search:text1:text2">
+                 <div class="card" >
+                    <div class="card-body" style="text-align: left;">
+                      <div class="card-title" style="text-decoration-color: slateblue;font-style: italic;"><h5>{{job.title}}@{{job.companyname}}</h5></div>
+                     <h6 class="card-text">Salary:{{job.salary}}</h6>
+                     <h6 class="card-text">Experience:{{job.experience}}</h6>
+                     <h6 class="card-text">Vacancies:{{job.noofposition}}</h6>
+                     <h6 class="card-text">Degree:{{job.degree}}</h6>
+                     <h6 class="card-text">skills:{{job.skillsqualification}}</h6>
+                     <h6 class="card-text">Role:{{job.role}}</h6>
+                     <h6 class="card-text">Responsibility:{{job.responsibility}}</h6>
+                     <h6 class="card-text">Location:{{job.location}}</h6>
+                    </div>
+                    <div class="card-footer text-muted">
+                      PostedDate:{{job.posteddate}}&nbsp;&nbsp;&nbsp;&nbsp;Vacancies:{{job.noofposition}}
+                      <button type="button" class="btn btn-primary" [routerLink]="['/home']">Apply</button>
+                    </div>
+                  </div>
+                     
+
+</div>
+</div>

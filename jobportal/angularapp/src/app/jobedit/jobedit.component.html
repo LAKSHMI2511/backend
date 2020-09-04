@@ -1,0 +1,65 @@
+<div class="container">
+      <div  *ngIf="!Editing">
+            <div *ngFor="let job of items">
+            <div class="card" style="width: auto;background-color:lightblue;">
+              <div class="card-header">{{job.title}}</div>
+              <div class="card-body">
+                <h3>{{job.companyname}}</h3>
+                <p>Location:{{job.location}}</p>
+                <p>Salary:{{job.salary}}</p>
+                <p>Experience:{{job.experience}}</p>
+                
+                <button class="btn btn-sm btn-primary" (click)="enableEditing(job)">
+                    <i class="fa fa-pencil"></i> Edit
+                  </button> 
+                  <button class="btn btn-sm btn-danger ml-1" (click)="deleteProduct(job)">
+                    <i class="fa fa-trash"></i> Delete</button>
+              </div>
+              </div>
+        </div>
+        </div>
+    
+    <div *ngIf="Editing">
+              
+              Title: <input class="form-control mr-2" type="String" name="title"
+                     [(ngModel)]="job.title" placeholder="Name">
+                  JOBID:<input class="form-control mr-2" type="number" name="jobid"
+                     [(ngModel)]="job.jobid" placeholder="Name">
+                     ROLE:<input class="form-control mr-2" type="String" name="role"
+                     [(ngModel)]="job.role" placeholder="Name">
+                     RESPONSIBILITY:<input class="form-control mr-2" type="String" name="responsibility"
+                     [(ngModel)]="job.responsibility" placeholder="Name">
+                     LOCATION<input class="form-control mr-2" type="String" name="location"
+                     [(ngModel)]="job.location" placeholder="Name" required>
+                     NOOFPOSITION:<input class="form-control mr-2" type="number" name="noofposition"
+                     [(ngModel)]="job.noofposition" placeholder="Name" >
+                     COMPANYNAME<input class="form-control mr-2" type="String" name="companyname"
+                     [(ngModel)]="job.companyname" placeholder="Name" >
+                     EXPERIENCE<input class="form-control mr-2" type="number" name="experience"
+                     [(ngModel)]="job.experience" placeholder="Name">
+                     SALARY:<input class="form-control mr-2" type="number" name="salary"
+                     [(ngModel)]="job.salary" placeholder="Name" >
+                     SKILLS<input class="form-control mr-2" type="String" name="skillsqualification"
+                     [(ngModel)]="job.skillsqualification" placeholder="Name">
+                     DEGREE<input class="form-control mr-2" type="String" name="degree"
+                     [(ngModel)]="job.degree" placeholder="Name" >
+                     COMPANYINFO<input class="form-control mr-2" type="String" name="companyinfo"
+                     [(ngModel)]="job.companyinfo" placeholder="Name">
+                     EMPLOYTYPE<input class="form-control mr-2" type="String" name="employmenttype"
+                     [(ngModel)]="job.employmenttype" placeholder="Name" >
+                     INDUSTRYTYPE<input class="form-control mr-2" type="String" name="industrytype"
+                     [(ngModel)]="job.industrytype" placeholder="Name" >
+                     SEARCH<input class="form-control mr-2" type="String" name="searchword"
+                     [(ngModel)]="job.searchword" placeholder="Name" >
+                     DESC<input class="form-control mr-2" type="String" name="desc"
+                     [(ngModel)]="job.desc" placeholder="Name" >
+
+                     <button class="btn btn-sm btn-primary mr-2" (click)="editJob(job)">
+                        <i class="fa fa-floppy-o"></i> Save
+                      </button>
+                      <!-- <button class="btn btn-sm btn-primary mr-2" [routerLink]="['/j']">
+                        <i class="fa fa-floppy-o"></i>BACK
+                      </button> -->
+                      
+    </div>
+</div>
